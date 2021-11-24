@@ -1,0 +1,17 @@
+{% extends "simulator/base.html" %}
+{% block content %}
+    <h1>Confirm Order</h1>   
+    {% if user.is_authenticated %}
+        <p>Price: ${{ price }}</p>    
+        <p>Quantity: {{quantity }}</p>
+        <p>Total: ${{ total }}</p>
+        <p>Are you sure you would like to {{ buyOrSell }} {{ quantity }} shares of {{ symbol }} ({{ longName }}) at ${{ price }}? </p>
+        <a class="btn btn-primary" href="{% url 'home' %}">Yes</a>
+        <a class="btn btn-primary" href="{% url 'trade' %}">No</a>
+
+    {% else %}
+        <p>Please log in.</p>
+    {% endif %}
+{% endblock content %}
+
+<!--<p>Total: ${{ total }}</p>-->

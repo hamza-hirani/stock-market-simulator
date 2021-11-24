@@ -1,0 +1,14 @@
+{% extends "simulator/base.html" %}
+{% block content %}
+    <h1>Watchlist</h1>   
+    <p>Add new stock to watchlist: </p>
+    <form action="{% url 'addToWatchlist' %}" method=POST>
+        
+        {% csrf_token %}
+        <input type="search" name="searched">
+        <button type="submit">Search</button>
+
+    </form>
+    <br>
+    <br>
+{% endblock content %}

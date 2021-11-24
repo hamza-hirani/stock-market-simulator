@@ -1,0 +1,28 @@
+{% extends "simulator/base.html" %}
+{% block content %}
+    <h1>Trade</h1>   
+    {% if user.is_authenticated %}
+        <form action="{% url 'confirmorder' %}" method=POST>
+            
+            {% csrf_token %}
+            <label for="ticker">Enter Ticker: </label><br>
+            <input type="search" name="ticker" id="searchTicker"><br>
+            <label for="quantity">Quantity:</label><br>
+            <input type="search" name="quantity" id="searchTickerQ"><br><br>
+            
+            <select id="buyOrSell" name="buyOrSell">
+                <option value="buy">Buy</option>
+                <option value="sell">Sell</option>
+            </select><br>
+
+        
+            <br>
+            <button type="submit">Trade</button>
+            <br><br>
+            
+        </form>
+        <p>Current buying power: insert amount</p>
+    {% else %}
+        <p>Please log in.</p>
+    {% endif %}
+{% endblock content %}

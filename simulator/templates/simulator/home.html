@@ -1,0 +1,12 @@
+{% extends "simulator/base.html" %}
+{% block content %}
+    <h1>Simulator</h1>   
+    {% if user.is_authenticated %}
+        <label>Account Value: </label><br>
+        <a class="btn btn-primary" href="{% url 'portfolio' %}">Portfolio</a>
+        <a class="btn btn-primary" href="{% url 'trade' %}">Trade</a>
+        <a class="btn btn-primary" href="{% url 'rankings' %}">Rankings</a>
+    {% else %}
+        <p>Please log in.</p>
+    {% endif %}
+{% endblock content %}

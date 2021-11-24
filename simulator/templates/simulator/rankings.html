@@ -1,0 +1,9 @@
+{% extends "simulator/base.html" %}
+{% block content %}
+    <h1>Rankings</h1>   
+    {% if user.is_authenticated %}
+        <p>User rankings</p>
+    {% else %}
+        <p>Please log in.</p>
+    {% endif %}
+{% endblock content %}

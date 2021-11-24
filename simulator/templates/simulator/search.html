@@ -1,0 +1,22 @@
+{% extends "simulator/base.html" %}
+{% block content %}
+    <h1>Stock Research</h1>   
+    <form action="{% url 'search' %}" method=POST>
+        
+        {% csrf_token %}
+        <input type="search" name="searched">
+        <button type="submit">Search</button>
+
+    </form>
+    <br>
+    <br>
+
+    <p>Symbol: {{ symbol }}</p>
+    <p>Company: {{ company }}</p>
+    <p>Last Price: {{ price }}</p>
+    <p>Market Cap: {{ marketCap }}</p>
+    <p>Volume: {{ volume }}</p>
+    <p>P/E Ratio: {{ forwardPE }}</p>
+    <p>Yield: {{ divYield }}</p>
+{% endblock content %}
+

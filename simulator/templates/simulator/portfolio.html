@@ -1,0 +1,30 @@
+{% extends "simulator/base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'simulator/portfolio.css' %}">
+    <h1>Portfolio</h1>   
+    {% if user.is_authenticated %}
+        <table id='currentPositions'>
+            <tr>
+                <th>Stock</th>
+                <th>Shares</th>
+                <th>Purchase Price</th>
+                <th>Current Price</th>
+                <th>Market Value</th>
+                <th>Change</th>
+            </tr>
+            {% for position in positions %}
+                <tr>
+                    <td><a href="{% url 'search' %}">{{ position.stock }}</a></td>
+                    <td>{{ position.shares }}</td>
+                    <td>{{ position.boughtPrice }}</td>
+                    <td>{{ position.currentPrice }}</td>
+                    <td>{{ position.marketValue }}</td>
+                    <td>{{ position.change }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>Please log in.</p>
+    {% endif %}
+{% endblock content %}

@@ -1,0 +1,54 @@
+{% extends "simulator/base.html" %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'simulator/settings.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <h1>Settings</h1>
+
+    <div class="settings">
+        <!-- light/dark mode -->
+        <h3>Light/Dark Mode</h3>
+        <p>Switch between dark mode and light mode.</p>
+            <span>
+                <div class="moon">
+                    <p>&#127769;</p>
+                </div>
+                
+                <div class="switch">
+                    <input type="checkbox" class="checkbox" id="checkbox">
+                    <label for="checkbox" class="label">
+                        <div class="ball"></div>
+                    </label>
+                </div>
+                
+                <div class="sun">
+                    <p class="sun">&#128262;</p>
+                </div>
+            </span> 
+            
+        <!-- upload new profile pic -->
+        <h3>Change profile picture</h3>
+        <p>Upload a profile picture for your account.</p>
+
+        <!-- change color theme -->
+        <h3>Change color theme</h3>
+        <p>Choose one of the following colors to change the background of your dashboard:</p>
+        <button type="Button" class="color blue"></button>
+        <button type="Button" class="color red"></button>
+        <button type="Button" class="color purple"></button>
+        <button type="Button" class="color green"></button>
+        <button type="Button" class="color orange"></button>
+        <button type="Button" class="color yellow"></button>
+        <button type="Button" class="color grey"></button>
+        <button type="Button" class="color pink"></button>
+
+        <!-- deactivate account -->
+        <h3>Deactivate Account</h3>
+        <p>Deactivating your account, all of your progress will be erased.</p>
+        
+        <br>
+        <br>
+    </div>
+    <script src = "{% static 'simulator/settings.js' %}"></script>
+{% endblock content %}
